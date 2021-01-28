@@ -12,6 +12,7 @@ roi_2=img[77:522,641:988]
 #調整兩張圖的權重，類似調透明度
 dst=cv2.addWeighted(roi_1,0.3,roi_2,0.7,0)
 cv2.imshow('dst',dst)
+cv2.imwrite('dst.jpg',dst)
 cv2.waitKey(0)
 cv2.destroyAllWindow()
-
+cv2.imwrite('dst.jpg',dst)
