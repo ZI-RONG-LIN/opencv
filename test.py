@@ -15,5 +15,6 @@ cv2.namedWindow('test',cv2.WINDOW_NORMAL)
 cv2.imshow('test',img)
 #要輸入下面兩行才會有照片視窗
 #意思為當按按鍵之後才會關掉視窗，否則照片就會顯示不出來，因為直接關掉了
+#waitkey後面放要等待的時間，如果輸入0則無限等待
 cv2.waitKey(0)
 cv2.destroyAllWindows()
