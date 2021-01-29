@@ -23,9 +23,11 @@ blur = cv2.blur(img, (5, 5))
 gauss = cv2.GaussianBlur(img, (5, 5), 0)
 
 # 中值滤波
+#常用來去除椒鹽噪音，分布在全圖的噪音，像以前電視壞掉的畫面
 median = cv2.medianBlur(img, 5)
 
 # 雙邊滤波
+#能在保持邊界清晰的情況下有效的去除噪音，但操作速度較慢
 bila = cv2.bilateralFilter(img, 10, 200, 200)
 
 plt.subplot(231), plt.imshow(img), plt.title('Original')
