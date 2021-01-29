@@ -13,9 +13,11 @@ kernel = np.ones((5, 5), np.uint8)
 kernel2 = np.ones((10, 10), np.uint8) 
 
 # 腐蝕
+#iterations代表腐蝕次數
 # 圖像周圍可能有一些雜訊，透過腐蝕方式去除
 erosion = cv2.erode(img1, kernel, iterations=1)  
 # 膨脹
+#iterations代表膨脹次數
 #某些地方被腐蝕過頭或是有缺角，透過膨脹把圖塊補齊
 dilation = cv2.dilate(img1, kernel, iterations=1)  
 # 開運算
