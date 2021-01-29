@@ -15,7 +15,7 @@ def savexy(event,x,y,flags,param):
 #讀圖檔
 img=cv2.imread('test.jpg')
 rows,cols,ch=img.shape
-#目標轉乘的點位
+#目標轉乘的點位(順時針，如果要其他順序的話在調整xy點位)
 pts2 = np.float32([[0,0],[300,0],[300,300],[0,300]])
 #呈現的視窗名稱
 cv2.namedWindow('image')
@@ -24,6 +24,7 @@ cv2.setMouseCallback('image',savexy)
 #當按按鍵之後再關閉視窗
 while(1):
     cv2.imshow('image',img)
+    #當i>3，也就是點了4個點之後就break這個迴圈
     if cv2.waitKey(20)&0xFF==27 or i>3:
         break
 cv2.destroyAllWindows()
