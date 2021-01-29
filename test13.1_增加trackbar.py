@@ -12,7 +12,7 @@ cv2.createTrackbar('minval','image',0,255,nothing)
 cv2.createTrackbar('maxval','image',0,255,nothing)
 
 while(1):
-    cv2.imshow('image',img)
+    cv2.imshow('image',edges)
     k=cv2.waitKey(1)&0xFF
     if k==27:
         break
