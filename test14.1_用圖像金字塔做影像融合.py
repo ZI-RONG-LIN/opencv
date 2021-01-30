@@ -20,6 +20,8 @@ for i in range(6):
     gpA.append(G)
 
 # 將橘子進行高斯金字塔處理，總共六级處理 降階6次
+#因為之後數據丟到gpa、gpb的陣列裡，所以覆蓋G沒有關係
+#如果存另外一個參數也是可以，只是會再佔一個記憶體存放影像的空間
 G = B.copy()
 gpB = [G]
 for i in range(6):
@@ -39,7 +41,9 @@ for i in range(5, 0, -1):
     GE = cv2.pyrUp(gpB[i])
     L = cv2.subtract(gpB[i-1], GE)
     lpB.append(L)
+
 # 將兩個圖像的矩陣的左半部分和右半部分拼接到一起
+#這裡是先把降階升階的影像切半之後組合在一起，再依序組合跑下面那段金字塔影像融合
 LS = []
 for la, lb in zip(lpA, lpB):
     rows, cols, dpt = la.shape
