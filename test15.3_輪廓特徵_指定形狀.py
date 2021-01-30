@@ -40,6 +40,7 @@ rect_area = w*h
 # 輪廓面積與邊界矩形面積的比。
 extent = float(area)/rect_area  
 #convexHull檢查這些傳入的點之間是不是有凸凹表現
+#有時候只想要有最外圍的輪廓，不想要連凹陷的細節輪廓都算入
 hull = cv2.convexHull(cnt)
 hull_area = cv2.contourArea(hull)
 # 輪廓面積与凸包面積的比。
