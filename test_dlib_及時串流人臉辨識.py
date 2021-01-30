@@ -16,6 +16,7 @@ while(cap.isOpened()):
   ret, frame = cap.read()
 
   # 偵測人臉
+  #門檻值，分數大於0的，就判斷是人臉
   face_rects, scores, idx = detector.run(frame, 0)
 
   # 取出所有偵測的結果
@@ -24,6 +25,7 @@ while(cap.isOpened()):
     y1 = d.top()
     x2 = d.right()
     y2 = d.bottom()
+    #idx是偵測器的索引值(可以參考dlib的說明文件)
     text = "%2.2f(%d)" % (scores[i], idx[i])
 
     # 以方框標示偵測的人臉

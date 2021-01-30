@@ -13,6 +13,7 @@ img = imutils.resize(img, width=1280)
 detector = dlib.get_frontal_face_detector()
 
 # 偵測人臉
+#門檻值，分數大於0的，就判斷是人臉
 face_rects = detector(img, 0)
 
 # 取出所有偵測的結果
