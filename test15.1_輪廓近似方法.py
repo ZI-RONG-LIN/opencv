@@ -24,6 +24,7 @@ while(1):
     img = src.copy()
     n = 10 - cv2.getTrackbarPos('epsilon', WindowName)  # 获取a1滑动条值
 #CHAIN_APPROX_SIMPLE 只會抓幾個重要的點(如果圖形是矩形，則選出角落4個點)，不會整個邊緣都選出
+    #RETR_TREE 可以參考講義21.5.3 輪廓檢索模式
     contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnt = contours[0]
     length = cv2.arcLength(cnt, True)
