@@ -19,5 +19,4 @@ while(1):
     minval=cv2.getTrackbarPos('minval','image')
     maxval=cv2.getTrackbarPos('maxval','image')
     edges = cv2.Canny(img,minval, maxval)
-    #如果switch沒打開，則下方顯示黑色，否則顯示讀取到的RGB色]
 cv2.destroyAllWindows()
